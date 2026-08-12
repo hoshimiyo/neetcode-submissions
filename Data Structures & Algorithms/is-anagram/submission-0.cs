@@ -1,14 +1,8 @@
 public class Solution {
     public bool IsAnagram(string s, string t) {
-        if(s.Length != t.Length)
-            return false;
-
-        char[] sSort = s.ToCharArray();
-        char[] tSort = t.ToCharArray();
-
-        Array.Sort(sSort);
-        Array.Sort(tSort);
-
-        return sSort.SequenceEqual(tSort);
+        string s1 = String.Concat(s.OrderBy(c => c));
+        string t1 = String.Concat(t.OrderBy(c => c));
+        if (s1 == t1) return true;
+         return false;
     }
 }
